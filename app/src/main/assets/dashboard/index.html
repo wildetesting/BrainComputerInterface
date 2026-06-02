@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Local Movement Diary</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">8pm local diary</p>
+          <h1>Movement, sleep, and places in one private page.</h1>
+        </div>
+        <button id="refreshButton" type="button">Refresh</button>
+      </header>
+
+      <section class="today-card">
+        <div class="date-row">
+          <div>
+            <p class="eyebrow">Today</p>
+            <h2 id="todayDate">Waiting for data</h2>
+          </div>
+          <span class="local-pill">local only</span>
+        </div>
+
+        <div class="rings">
+          <div class="ring" id="stepRing">
+            <span id="stepCount">0</span>
+            <small>steps</small>
+          </div>
+          <div class="ring sleep" id="sleepRing">
+            <span id="sleepHours">0h</span>
+            <small>sleep</small>
+          </div>
+        </div>
+
+        <p class="diary-line" id="diaryText">Open permissions, then refresh to begin today's diary.</p>
+      </section>
+
+      <section class="panel">
+        <div class="panel-heading">
+          <h2>Rough activity timeline</h2>
+          <span>midnight to midnight</span>
+        </div>
+        <div class="timeline-hours" aria-hidden="true">
+          <span>00</span><span>06</span><span>12</span><span>18</span><span>24</span>
+        </div>
+        <div class="timeline" id="activityTimeline"></div>
+        <div class="timeline sleep-line" id="sleepTimeline"></div>
+        <div class="legend" id="legend"></div>
+      </section>
+
+      <section class="panel route-panel">
+        <div class="panel-heading">
+          <h2>Location trace</h2>
+          <span>abstract, no map tiles</span>
+        </div>
+        <svg id="routeTrace" viewBox="0 0 320 220" role="img" aria-label="Abstract route trace"></svg>
+      </section>
+
+      <section class="panel">
+        <div class="panel-heading">
+          <h2>History</h2>
+          <span>last 30 days on this phone</span>
+        </div>
+        <div class="history" id="history"></div>
+      </section>
+
+      <footer>
+        <p id="sleepNote"></p>
+      </footer>
+    </main>
+    <script src="dashboard.js"></script>
+  </body>
+</html>
