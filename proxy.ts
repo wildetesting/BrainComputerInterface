@@ -4,7 +4,7 @@ import { AUTH_COOKIE_NAME } from "@/lib/config";
 
 const protectedPrefixes = ["/dashboard", "/upload", "/category", "/api/snapshots"];
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const isProtected = protectedPrefixes.some((prefix) =>
     request.nextUrl.pathname.startsWith(prefix)
   );
