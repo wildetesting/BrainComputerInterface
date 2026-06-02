@@ -81,14 +81,8 @@ class MovementStore(context: Context) : SQLiteOpenHelper(
     ) {
         writableDatabase.execSQL(
             """
-            INSERT INTO daily_summary(date, steps, sleep_minutes, sleep_confidence, diary_text, updated_at)
+            INSERT OR REPLACE INTO daily_summary(date, steps, sleep_minutes, sleep_confidence, diary_text, updated_at)
             VALUES (?, ?, ?, ?, ?, ?)
-            ON CONFLICT(date) DO UPDATE SET
-                steps = excluded.steps,
-                sleep_minutes = excluded.sleep_minutes,
-                sleep_confidence = excluded.sleep_confidence,
-                diary_text = excluded.diary_text,
-                updated_at = excluded.updated_at
             """.trimIndent(),
             arrayOf(
                 date.toString(),
