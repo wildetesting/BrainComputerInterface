@@ -19,7 +19,29 @@ A web dashboard for tracking Flipper Zero projects: protocols, pairing steps, ta
 
 ## Getting started
 
+### Option A — One-command setup (creates `~/flipper-dashboard`)
+
+**macOS / Linux:**
 ```bash
+bash scripts/setup-local.sh
+```
+
+**Windows:**
+```bat
+scripts\setup-local.bat
+```
+
+Custom folder:
+```bash
+bash scripts/setup-local.sh ~/Projects/flipper-dashboard
+```
+
+### Option B — Manual setup
+
+```bash
+mkdir -p ~/flipper-dashboard
+cd ~/flipper-dashboard
+git clone --branch cursor/flipper-dashboard-555c https://github.com/wildetesting/BrainComputerInterface.git .
 npm install
 npm run dev
 ```
