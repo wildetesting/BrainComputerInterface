@@ -7,7 +7,9 @@ A web dashboard for tracking Flipper Zero projects: protocols, pairing steps, ta
 - Activity list with status and category badges
 - Step-by-step checklists with done / failed / skipped states
 - Target device metadata (brand, frequency, protocol, Flipper protocol)
-- Pre-seeded Activity #1: Dominator garage door via ATA PTX4
+- Pre-seeded activities:
+  - **#1** Dominator garage door via ATA PTX4
+  - **#2** Windows local user via BadUSB Rubber Ducky script
 
 ## Stack
 
@@ -47,3 +49,14 @@ The seeded Dominator activity walks through:
 6. Test and backup `.sub` file
 
 Rolling-code remotes cannot be cloned via Read/Replay — pairing a new virtual remote is the supported path.
+
+## Activity #2 workflow
+
+**Windows local user — BadUSB** (`scripts/win_local_user.txt`):
+
+1. Customize username/password in the Ducky script
+2. Copy to Flipper `badusb/` folder via qFlipper
+3. Run from Bad USB app on an **authorized** Windows machine with an admin-capable session
+4. Verify with `lusrmgr.msc`, then delete the test account when done
+
+Default lab credentials in the script: `flipper_user` / `FlipperTemp123!` — change before use.

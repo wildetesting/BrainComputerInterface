@@ -1,3 +1,4 @@
-import { seedIfEmpty } from "./activities";
+import { seedIfEmpty, seedMissingDefaults } from "./activities";
 
 seedIfEmpty();
+seedMissingDefaults();

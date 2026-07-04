@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getActivityById } from "@/lib/activities";
+import { ActivityArtifacts } from "@/components/ActivityArtifacts";
 import { ActivityMeta } from "@/components/ActivityMeta";
 import { StepChecklist } from "@/components/StepChecklist";
 import { StatusBadge } from "@/components/StatusBadge";
@@ -45,6 +46,7 @@ export default async function ActivityDetailPage({ params }: PageProps) {
             </span>
           </div>
           <StepChecklist activityId={activity.id} steps={activity.steps} />
+          <ActivityArtifacts artifacts={activity.artifacts} />
         </section>
 
         <aside className="space-y-4">

