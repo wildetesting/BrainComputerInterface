@@ -20,6 +20,17 @@ export default function HomePage() {
 
       <StatsBar activities={activities} />
 
+      <Link
+        href="/guides/sd-card"
+        className="block rounded-2xl border border-card-border bg-card p-5 transition hover:border-accent/40"
+      >
+        <p className="text-sm font-medium text-accent">Setup guide</p>
+        <h2 className="mt-1 text-lg font-semibold">How to install the microSD card</h2>
+        <p className="mt-1 text-sm text-muted">
+          Card specs, physical install steps, formatting, and troubleshooting.
+        </p>
+      </Link>
+
       <section className="space-y-4">
         <div className="flex items-center justify-between">
           <h2 className="text-xl font-semibold">Activities</h2>

@@ -39,12 +39,20 @@ export default function RootLayout({
                   <p className="text-xs text-muted">Activity tracker</p>
                 </div>
               </Link>
-              <Link
-                href="/activities/new"
-                className="rounded-lg bg-accent px-4 py-2 text-sm font-medium text-black transition hover:brightness-110"
-              >
-                New activity
-              </Link>
+              <nav className="flex items-center gap-3">
+                <Link
+                  href="/guides/sd-card"
+                  className="hidden rounded-lg border border-card-border px-3 py-2 text-sm text-muted transition hover:border-accent/40 hover:text-foreground sm:inline-block"
+                >
+                  SD card guide
+                </Link>
+                <Link
+                  href="/activities/new"
+                  className="rounded-lg bg-accent px-4 py-2 text-sm font-medium text-black transition hover:brightness-110"
+                >
+                  New activity
+                </Link>
+              </nav>
             </div>
           </header>
           <main className="mx-auto max-w-6xl px-4 py-8 sm:px-6">{children}</main>

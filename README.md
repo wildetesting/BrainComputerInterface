@@ -26,6 +26,10 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
+## Guides
+
+- [SD card installation](/guides/sd-card) — specs, physical install, format, troubleshooting
+
 The database is created automatically at `data/flipper.db` on first run. Activity #1 is seeded when the database is empty.
 
 ## Scripts
